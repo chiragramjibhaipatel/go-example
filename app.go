@@ -21,6 +21,8 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		//log the request
+		log.Println(r.Method, r.URL)
 		data := map[string]string{
 			"Region": os.Getenv("FLY_REGION"),
 		}
